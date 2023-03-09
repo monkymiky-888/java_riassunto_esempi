@@ -1,0 +1,76 @@
+// ogni file deve essere nominato come l'unica classe pubblica che contiene.
+
+/**commento blocco di testo
+ * su più righe
+ * riconoscibile con il comando javadoc
+ */
+
+/*
+ * semplice commento su più righe
+ */
+
+public class ClasseRiassunto {
+// ------------------------------------------ costanti ---------------------------------------------------------------
+    public static final float costante = 3.14; //può essere usato come alias per rendere più esplicativo l'utilizzo di numeri "costanti" nelle espressioni. tipo float PI = 3,14 
+// -----------------------------------------metodo di classe  e return ----------------------------------------------------------
+    public static int metodoDiClasse(int intero1, int intero2){ //metodo di classe (non di istanza) best-practice usare verbi o frasi per i nomi dei metodi
+        int ris;
+        if(intero1>intero2){
+            ris= intero1;
+            return intero1;                     // bad practice mettere tanti return sparsi nel blocco di codice
+        }
+        else{
+            ris = intero2;
+            return intero2;
+        }
+        return ris;};                           //best-practice mettere 1 unico return alla fine del blocco
+    public static void main(String[] args) { //viene ignorato questo metodo se la classe non viene eseguita come programma
+//--------------------------------------------casting --------------------------------------------------------------
+        double doubleVar = 9.3;
+        int intVar = (int)doubleVar; //casting esplicito  
+//------------------------------------------- if-else e string ----------------------------------------------------
+        String stringa1 ="CiAo";
+        String stringa2 = "ciao";
+        if(stringa1 == stringa2){} // per le stringhe == significa che punta alla stessa area di memoria bad-practice!
+        else if (stringa1.equals(stringa2)) {}// best-practice , confronta i valori contenuti nelle stringhe
+        else if (stringa2.equalsIgnoreCase(stringa1)){} // non case sensitive
+// --------------------------------------------- operatore ternario ---------------------------------------------------------------------
+        int max = 0;
+        max = (intVar > doubleVar) ? intVar : doubleVar ; // operatore ternario che equivale all'if qua sotto.
+        if(intVar > doubleVar)
+            max = intVar;
+        else
+            max = doubleVar;
+//------------------------------------------------------------- asserzioni -------------------------------------------------------
+        assert intVar != 1; /*  si attivano con java -enableassertion nomeProgramma oppure con un impostazione dell IDE.
+                                verifica l'espressione booleana, se falsa viene mostara l'asserzione e termina il programma*/
+//------------------------------------------------------ switch - case --------------------------------------------------------------
+        switch(intVar){ // può confrontare le lable delle Enum
+            case 1:
+                intVAr++;
+                break;
+            case 2:
+                doubleVar++;
+            case 9:
+            default:
+                println("messaggio d'errore, stampato nel caso si siano dimenticati casi"); // best-bractice mettere sempre il caso default
+        }
+//------------------------------------------------------- print / println -----------------------------------------------------------
+        print(intVar + "  -  "); // stampa senza andare a capo
+        println(doublevar); // stampa e poi va a capo
+        print("questo è il carattere di escape \\  per scrivere simboli particolari in una stringa.\n\\n per andare a capo \n \\r sposta l'output all'inizio della riga corrente \n \\t tab"); 
+//------------------------------------------------------------classe Math --------------------------------------------------------
+// è importata di default da Java
+        int mAx = Math.max(3,4);
+        int min = Math.min(3.0,2.0);
+        int valoreAssoluto = Math.abs(intVar);
+        int arrotondato = (int)Math.round(doubleVar); // ritorna un lond se l'argomento è double, int se l'arg è float
+        int intSopra = Math.ceil(doubleVar);
+        int intSotto = Math.floor(doubleVar);
+        int potenza = Math.pow(2.0 , 3.0) ; // 2 alla terza --- argomenti double
+        int radice = Math.sqrt(4.0); // ritorna 2.0
+//----------------------------------------------------------------------------------------------------------------------------------- 
+
+    }
+    
+}
