@@ -9,6 +9,7 @@
  * semplice commento su più righe
  */
 
+import java.util.Scanner; // input da tastiera
 public class ClasseRiassunto {
 // ------------------------------------------ costanti ---------------------------------------------------------------
     public static final float costante = 3.14; //può essere usato come alias per rendere più esplicativo l'utilizzo di numeri "costanti" nelle espressioni. tipo float PI = 3,14 
@@ -55,6 +56,9 @@ public class ClasseRiassunto {
             default:
                 println("messaggio d'errore, stampato nel caso si siano dimenticati casi"); // best-bractice mettere sempre il caso default
         }
+//------------------------------------------------------- input da tastiera ---------------------------------------------------------
+Scanner tastiera = new Scanner(System.in);
+int dimensione = tastiera.nextInt();
 //------------------------------------------------------- print / println -----------------------------------------------------------
         print(intVar + "  -  "); // stampa senza andare a capo
         println(doublevar); // stampa e poi va a capo
@@ -69,8 +73,29 @@ public class ClasseRiassunto {
         int intSotto = Math.floor(doubleVar);
         int potenza = Math.pow(2.0 , 3.0) ; // 2 alla terza --- argomenti double
         int radice = Math.sqrt(4.0); // ritorna 2.0
-//----------------------------------------------------------------------------------------------------------------------------------- 
+//---------------------------------------------------------------operatore % resto della divisione-------------------------------------------------------------------- 
+        float float1 = 3,14;
+        float float2 = 1,0;
+        float resto = float1%float2; // == 0,14
+        println(resto);
+//--------------------------------------------array sono oggetti, = e == seguono le stesse regole che per gli oggetti --------------------------------------------
+        dimensione = tastiera.nextInt();
+        string[] arrayDiStringhe = new string[dimensione]; // array di stringhe di dimensione scelta dall'utente
+        int arrayDiInt[] = new int[100]; // best-practice scegliere un nome al singolare (si accede alla singola variabile)
+        // best practice ignorare l'elemento 0 dell'array se le cose che vi inserisco sono numerate nella realtà da a partire da 1 (non 0)
+        double[] numero = {3.3 , 2.3 , 4.5 , 9};
+        // passando un elemento di un array come parametro per una funzione viene passato il riferiento alla variabile e non fatta una copia.
+        //public static int metodo (int[] array){return array[0];};         si può passare l'intero array come parametro anche senza specificarne la lunghezza
+        //public static int metodo (int... args){return args[0];};          crea un array di interi lugno quanti sono gli argomenti e lo passa come parametro
+        //int ris = metodo(arrayDiInt); // no parentesi quadre 
+        int matrice[][] = new int[10][10];
 
-    }
-    
+//---------------------------------------------------------- for e for-each -----------------------------------------------------------------------------
+        for(int elemento : arrayDiInt) // for-each
+            elemento ++;
+        for(int i = 0; i<=arrayDiInt.length; i++) // usare il for-each sarebbe un errore perche i è usato nel corpo del ciclo
+            arrayDiInt[i] = i * 2;
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+}
 }
