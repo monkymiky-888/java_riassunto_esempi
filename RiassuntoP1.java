@@ -10,7 +10,7 @@
  */
 
 import java.util.Scanner; // input da tastiera
-public class ClasseRiassunto {
+public class RiassuntoP1 {
 // ------------------------------------------ costanti ---------------------------------------------------------------
     public static final float costante = 3.14; //può essere usato come alias per rendere più esplicativo l'utilizzo di numeri "costanti" nelle espressioni. tipo float PI = 3,14 
 // -----------------------------------------metodo di classe  e return ----------------------------------------------------------
@@ -43,7 +43,7 @@ public class ClasseRiassunto {
         else
             max = doubleVar;
 //------------------------------------------------------------- asserzioni -------------------------------------------------------
-        assert intVar != 1; /*  si attivano con java -enableassertion nomeProgramma oppure con un impostazione dell IDE.
+        assert intVar != 1; /* obsoleto!! si attivano con java -enableassertion nomeProgramma oppure con un impostazione dell IDE.
                                 verifica l'espressione booleana, se falsa viene mostara l'asserzione e termina il programma*/
 //------------------------------------------------------ switch - case --------------------------------------------------------------
         switch(intVar){ // può confrontare le lable delle Enum
